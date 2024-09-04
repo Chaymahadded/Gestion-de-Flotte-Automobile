@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="GestionVehiculeModelStoreContainer" CdmEntityContainer="BDGestionVehiculeContext">
+    <EntitySetMapping Name="Assurances">
+      <EntityTypeMapping TypeName="GestionVehiculeModel.Assurance">
+        <MappingFragment StoreEntitySet="Assurance">
+          <ScalarProperty Name="IdAssurance" ColumnName="IdAssurance" />
+          <ScalarProperty Name="DateDebut" ColumnName="DateDebut" />
+          <ScalarProperty Name="DateFin" ColumnName="DateFin" />
+          <ScalarProperty Name="MontantTotale" ColumnName="MontantTotale" />
+          <ScalarProperty Name="Num_Vehicule" ColumnName="Num_Vehicule" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="GestionVehiculeModel.Categorie">
+        <MappingFragment StoreEntitySet="Categorie">
+          <ScalarProperty Name="IdCategorie" ColumnName="IdCategorie" />
+          <ScalarProperty Name="NumCategorie" ColumnName="NumCategorie" />
+          <ScalarProperty Name="NomCategorie" ColumnName="NomCategorie" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Entretiens">
+      <EntityTypeMapping TypeName="GestionVehiculeModel.Entretien">
+        <MappingFragment StoreEntitySet="Entretien">
+          <ScalarProperty Name="IdEntretien" ColumnName="IdEntretien" />
+          <ScalarProperty Name="DateEntretien" ColumnName="DateEntretien" />
+          <ScalarProperty Name="TypeEntretien" ColumnName="TypeEntretien" />
+          <ScalarProperty Name="Kilometrage" ColumnName="Kilometrage" />
+          <ScalarProperty Name="Cout" ColumnName="Cout" />
+          <ScalarProperty Name="Num_Vehicule" ColumnName="Num_Vehicule" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fiches">
+      <EntityTypeMapping TypeName="GestionVehiculeModel.Fiche">
+        <MappingFragment StoreEntitySet="Fiche">
+          <ScalarProperty Name="IdFiche" ColumnName="IdFiche" />
+          <ScalarProperty Name="CoutTotal" ColumnName="CoutTotal" />
+          <ScalarProperty Name="NumVehicule" ColumnName="NumVehicule" />
+          <ScalarProperty Name="IdEntretien" ColumnName="IdEntretien" />
+          <ScalarProperty Name="IdReparation" ColumnName="IdReparation" />
+          <ScalarProperty Name="IdVisiteTech" ColumnName="IdVisiteTech" />
+          <ScalarProperty Name="IdAssurence" ColumnName="IdAssurence" />
+          <ScalarProperty Name="IdVignette" ColumnName="IdVignette" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reparations">
+      <EntityTypeMapping TypeName="GestionVehiculeModel.Reparation">
+        <MappingFragment StoreEntitySet="Reparation">
+          <ScalarProperty Name="IdReparation" ColumnName="IdReparation" />
+          <ScalarProperty Name="DateReparation" ColumnName="DateReparation" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Quantite" ColumnName="Quantite" />
+          <ScalarProperty Name="Index" ColumnName="Index" />
+          <ScalarProperty Name="Prix" ColumnName="Prix" />
+          <ScalarProperty Name="Num_Vehicule" ColumnName="Num_Vehicule" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Services">
+      <EntityTypeMapping TypeName="GestionVehiculeModel.Service">
+        <MappingFragment StoreEntitySet="Service">
+          <ScalarProperty Name="IdService" ColumnName="IdService" />
+          <ScalarProperty Name="NumService" ColumnName="NumService" />
+          <ScalarProperty Name="NomService" ColumnName="NomService" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="GestionVehiculeModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="CleRecuperation" ColumnName="CleRecuperation" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UTs">
+      <EntityTypeMapping TypeName="GestionVehiculeModel.UT">
+        <MappingFragment StoreEntitySet="UT">
+          <ScalarProperty Name="IdUT" ColumnName="IdUT" />
+          <ScalarProperty Name="NumUT" ColumnName="NumUT" />
+          <ScalarProperty Name="NomUT" ColumnName="NomUT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vehicules">
+      <EntityTypeMapping TypeName="GestionVehiculeModel.Vehicule">
+        <MappingFragment StoreEntitySet="Vehicule">
+          <ScalarProperty Name="NumVehicule" ColumnName="NumVehicule" />
+          <ScalarProperty Name="Matricule" ColumnName="Matricule" />
+          <ScalarProperty Name="Marque" ColumnName="Marque" />
+          <ScalarProperty Name="Puissance" ColumnName="Puissance" />
+          <ScalarProperty Name="Energie" ColumnName="Energie" />
+          <ScalarProperty Name="DMC" ColumnName="DMC" />
+          <ScalarProperty Name="Num_Chassis" ColumnName="Num_Chassis" />
+          <ScalarProperty Name="NombrePlaces" ColumnName="NombrePlaces" />
+          <ScalarProperty Name="AgeMoyen" ColumnName="AgeMoyen" />
+          <ScalarProperty Name="Index" ColumnName="Index" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vignettes">
+      <EntityTypeMapping TypeName="GestionVehiculeModel.Vignette">
+        <MappingFragment StoreEntitySet="Vignette">
+          <ScalarProperty Name="Id_Vignette" ColumnName="Id_Vignette" />
+          <ScalarProperty Name="DatePV" ColumnName="DatePV" />
+          <ScalarProperty Name="MontantTotale" ColumnName="MontantTotale" />
+          <ScalarProperty Name="Num_Vehicule" ColumnName="Num_Vehicule" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VisiteTechniques">
+      <EntityTypeMapping TypeName="GestionVehiculeModel.VisiteTechnique">
+        <MappingFragment StoreEntitySet="VisiteTechnique">
+          <ScalarProperty Name="IdVisiteTech" ColumnName="IdVisiteTech" />
+          <ScalarProperty Name="DateVisite" ColumnName="DateVisite" />
+          <ScalarProperty Name="DatePV" ColumnName="DatePV" />
+          <ScalarProperty Name="MontantTotale" ColumnName="MontantTotale" />
+          <ScalarProperty Name="Num_Vehicule" ColumnName="Num_Vehicule" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

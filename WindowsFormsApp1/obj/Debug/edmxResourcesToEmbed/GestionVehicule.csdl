@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GestionVehiculeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Assurance">
+    <Key>
+      <PropertyRef Name="IdAssurance" />
+    </Key>
+    <Property Name="IdAssurance" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DateFin" Type="DateTime" Precision="0" />
+    <Property Name="Num_Vehicule" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Categorie">
+    <Key>
+      <PropertyRef Name="IdCategorie" />
+    </Key>
+    <Property Name="IdCategorie" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NumCategorie" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="NomCategorie" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Entretien">
+    <Key>
+      <PropertyRef Name="IdEntretien" />
+    </Key>
+    <Property Name="IdEntretien" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TypeEntretien" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Kilometrage" Type="Int32" />
+    <Property Name="Num_Vehicule" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Reparation">
+    <Key>
+      <PropertyRef Name="IdReparation" />
+    </Key>
+    <Property Name="IdReparation" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DateReparation" Type="DateTime" Precision="0" />
+    <Property Name="Designation" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Quantite" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Prix" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="MontantTotale" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Num_Vehicule" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Service">
+    <Key>
+      <PropertyRef Name="IdService" />
+    </Key>
+    <Property Name="IdService" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NumService" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="NomService" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="IdUser" />
+    </Key>
+    <Property Name="IdUser" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="CleRecuperation" Type="Int32" />
+    <Property Name="Password" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="UT">
+    <Key>
+      <PropertyRef Name="IdUT" />
+    </Key>
+    <Property Name="IdUT" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NumUT" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="NomUT" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Vehicule">
+    <Key>
+      <PropertyRef Name="NumVehicule" />
+    </Key>
+    <Property Name="NumVehicule" Type="Int32" Nullable="false" />
+    <Property Name="Matricule" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Marque" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Puissance" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Energie" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="DMC" Type="DateTime" Precision="0" />
+    <Property Name="Num_Chassis" Type="Int32" />
+    <Property Name="NombrePlaces" Type="Int32" />
+    <Property Name="AgeMoyen" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Index" Type="Int32" />
+    <Property Name="IdService" Type="Int32" />
+    <Property Name="IdCategorie" Type="Int32" />
+    <Property Name="IdUT" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Vignette">
+    <Key>
+      <PropertyRef Name="Id_Vignette" />
+    </Key>
+    <Property Name="Id_Vignette" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DatePV" Type="DateTime" Precision="0" />
+    <Property Name="Num_Vehicule" Type="Int32" />
+  </EntityType>
+  <EntityType Name="VisiteTechnique">
+    <Key>
+      <PropertyRef Name="IdVisiteTech" />
+    </Key>
+    <Property Name="IdVisiteTech" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DateVisite" Type="DateTime" Precision="0" />
+    <Property Name="DatePV" Type="DateTime" Precision="0" />
+    <Property Name="MontantTotale" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Num_Vehicule" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="BDGestionVehiculeContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Assurances" EntityType="Self.Assurance" />
+    <EntitySet Name="Categories" EntityType="Self.Categorie" />
+    <EntitySet Name="Entretiens" EntityType="Self.Entretien" />
+    <EntitySet Name="Reparations" EntityType="Self.Reparation" />
+    <EntitySet Name="Services" EntityType="Self.Service" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <EntitySet Name="UTs" EntityType="Self.UT" />
+    <EntitySet Name="Vehicules" EntityType="Self.Vehicule" />
+    <EntitySet Name="Vignettes" EntityType="Self.Vignette" />
+    <EntitySet Name="VisiteTechniques" EntityType="Self.VisiteTechnique" />
+  </EntityContainer>
+</Schema>

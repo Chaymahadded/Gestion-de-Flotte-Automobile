@@ -1,0 +1,649 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{730B5FA3-4C27-4144-8C69-05E22CC6B794}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>WindowsFormsApp1</RootNamespace>
+    <AssemblyName>GestionVehicule</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\HP\Desktop\exe\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>gestion-de-flotte.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>037B6870651F1433406450D349559C15395FBFEA</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>WindowsFormsApp1_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DGV2Printer">
+      <HintPath>C:\Users\HP\Downloads\DGV2Printer.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1620.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.WinForms.10.0.40219.1\lib\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddAssurance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddAssurance.Designer.cs">
+      <DependentUpon>AddAssurance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddEntretien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEntretien.Designer.cs">
+      <DependentUpon>AddEntretien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddReparation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddReparation.Designer.cs">
+      <DependentUpon>AddReparation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddVehicule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddVehicule.Designer.cs">
+      <DependentUpon>AddVehicule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddVignette.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddVignette.Designer.cs">
+      <DependentUpon>AddVignette.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddVT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddVT.Designer.cs">
+      <DependentUpon>AddVT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Assurance.cs">
+      <DependentUpon>GestionVehicule.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Categorie.cs">
+      <DependentUpon>GestionVehicule.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetGestionVehicule.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetGestionVehicule.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DGVPrinter.cs" />
+    <Compile Include="EditAssurance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditAssurance.Designer.cs">
+      <DependentUpon>EditAssurance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditEntretien.cs">
+      <SubType>Form</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="EditEntretien.Designer.cs">
+      <DependentUpon>EditEntretien.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="EditReparationn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditReparationn.Designer.cs">
+      <DependentUpon>EditReparationn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditVehicule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditVehicule.Designer.cs">
+      <DependentUpon>EditVehicule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditVignette.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditVignette.Designer.cs">
+      <DependentUpon>EditVignette.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditVT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditVT.Designer.cs">
+      <DependentUpon>EditVT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entretien.cs">
+      <DependentUpon>GestionVehicule.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GestionVehicule.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GestionVehicule.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GestionVehicule.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GestionVehicule.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GestionVehicule.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GestionVehicule.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListeAssurance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListeAssurance.Designer.cs">
+      <DependentUpon>ListeAssurance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListeCategorie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListeCategorie.Designer.cs">
+      <DependentUpon>ListeCategorie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListeEntretien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListeEntretien.Designer.cs">
+      <DependentUpon>ListeEntretien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListeService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListeService.Designer.cs">
+      <DependentUpon>ListeService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListeUT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListeUT.Designer.cs">
+      <DependentUpon>ListeUT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListeVehicule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListeVehicule.Designer.cs">
+      <DependentUpon>ListeVehicule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListeVignette.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListeVignette.Designer.cs">
+      <DependentUpon>ListeVignette.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListeVisiteTechnique.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListeVisiteTechnique.Designer.cs">
+      <DependentUpon>ListeVisiteTechnique.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListReparation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListReparation.Designer.cs">
+      <DependentUpon>ListReparation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MotDePasseOublie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MotDePasseOublie.Designer.cs">
+      <DependentUpon>MotDePasseOublie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrintCat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintCat.Designer.cs">
+      <DependentUpon>PrintCat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrintEntretien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintEntretien.Designer.cs">
+      <DependentUpon>PrintEntretien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Printrep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Printrep.Designer.cs">
+      <DependentUpon>Printrep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrintReparation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintReparation.Designer.cs">
+      <DependentUpon>PrintReparation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrintSer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintSer.Designer.cs">
+      <DependentUpon>PrintSer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrintUT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintUT.Designer.cs">
+      <DependentUpon>PrintUT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrintVehicule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintVehicule.Designer.cs">
+      <DependentUpon>PrintVehicule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrintVT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintVT.Designer.cs">
+      <DependentUpon>PrintVT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Registre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registre.Designer.cs">
+      <DependentUpon>Registre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reparation.cs">
+      <DependentUpon>GestionVehicule.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RepVehicule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RepVehicule.Designer.cs">
+      <DependentUpon>RepVehicule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Service.cs">
+      <DependentUpon>GestionVehicule.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="User.cs">
+      <DependentUpon>GestionVehicule.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UT.cs">
+      <DependentUpon>GestionVehicule.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Vehicule.cs">
+      <DependentUpon>GestionVehicule.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VerifIndex.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VerifIndex.Designer.cs">
+      <DependentUpon>VerifIndex.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vignette.cs">
+      <DependentUpon>GestionVehicule.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VisiteTechnique.cs">
+      <DependentUpon>GestionVehicule.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CatReport.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EntretienReport.rdlc" />
+    <EmbeddedResource Include="FicheReport.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintCat.resx">
+      <DependentUpon>PrintCat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintEntretien.resx">
+      <DependentUpon>PrintEntretien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Printrep.resx">
+      <DependentUpon>Printrep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintReparation.resx">
+      <DependentUpon>PrintReparation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintSer.resx">
+      <DependentUpon>PrintSer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintUT.resx">
+      <DependentUpon>PrintUT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintVehicule.resx">
+      <DependentUpon>PrintVehicule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintVT.resx">
+      <DependentUpon>PrintVT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReparationReport.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RepVehicule.resx">
+      <DependentUpon>RepVehicule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SerReport.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UTReport.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VehiculeReport.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VerifIndex.resx">
+      <DependentUpon>VerifIndex.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VtReport.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EntityDeploy Include="GestionVehicule.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>GestionVehicule.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DataSetGestionVehicule.xsc">
+      <DependentUpon>DataSetGestionVehicule.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetGestionVehicule.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetGestionVehicule.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetGestionVehicule.xss">
+      <DependentUpon>DataSetGestionVehicule.xsd</DependentUpon>
+    </None>
+    <None Include="GestionVehicule.edmx.diagram">
+      <DependentUpon>GestionVehicule.edmx</DependentUpon>
+    </None>
+    <None Include="Properties\DataSources\System.Data.Entity.Database.datasource" />
+    <None Include="Properties\DataSources\System.Data.Entity.DbConfiguration.datasource" />
+    <None Include="Properties\DataSources\System.Data.Entity.DbConfigurationTypeAttribute.datasource" />
+    <None Include="Properties\DataSources\System.Data.Entity.DbContext.datasource" />
+    <None Include="Properties\DataSources\System.Data.Entity.DbContextTransaction.datasource" />
+    <None Include="Properties\DataSources\System.Data.Entity.DbFunctionAttribute.datasource" />
+    <None Include="Properties\DataSources\System.Data.Entity.DbFunctions.datasource" />
+    <None Include="Properties\DataSources\System.Data.Entity.DbModelBuilder.datasource" />
+    <None Include="Properties\DataSources\System.Data.Entity.DbModelBuilderVersionAttribute.datasource" />
+    <None Include="Properties\DataSources\System.Data.Entity.DbSet.datasource" />
+    <None Include="Properties\DataSources\System.Data.Entity.ObservableCollectionExtensions.datasource" />
+    <None Include="Properties\DataSources\System.Data.Entity.QueryableExtensions.datasource" />
+    <None Include="Resources\2.png" />
+    <None Include="Resources\16.png" />
+    <None Include="Resources\15.png" />
+    <None Include="Resources\19.png" />
+    <None Include="Resources\20.png" />
+    <None Include="Resources\30.png" />
+    <None Include="Resources\31.png" />
+    <None Include="Resources\35.png" />
+    <None Include="Resources\40.png" />
+    <Content Include="88.ico" />
+    <Content Include="99.ico" />
+    <None Include="Resources\splash.png" />
+    <None Include="Resources\100.png" />
+    <Content Include="gestion-de-flotte.ico" />
+    <Content Include="GestionVehicule.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>GestionVehicule.edmx</DependentUpon>
+      <LastGenOutput>GestionVehicule.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="GestionVehicule.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>GestionVehicule.edmx</DependentUpon>
+      <LastGenOutput>GestionVehicule.cs</LastGenOutput>
+    </Content>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\eye_closed.png" />
+    <None Include="Resources\eye_open.png" />
+    <None Include="Resources\13.png" />
+    <None Include="Resources\6.png" />
+    <None Include="Resources\1.png" />
+    <None Include="Resources\8.png" />
+    <None Include="Resources\9.png" />
+    <None Include="Resources\10.png" />
+    <EmbeddedResource Include="AddAssurance.resx">
+      <DependentUpon>AddAssurance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddEntretien.resx">
+      <DependentUpon>AddEntretien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddReparation.resx">
+      <DependentUpon>AddReparation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddVehicule.resx">
+      <DependentUpon>AddVehicule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddVignette.resx">
+      <DependentUpon>AddVignette.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddVT.resx">
+      <DependentUpon>AddVT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditAssurance.resx">
+      <DependentUpon>EditAssurance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditEntretien.resx">
+      <DependentUpon>EditEntretien.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditReparationn.resx">
+      <DependentUpon>EditReparationn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditVehicule.resx">
+      <DependentUpon>EditVehicule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditVignette.resx">
+      <DependentUpon>EditVignette.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditVT.resx">
+      <DependentUpon>EditVT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListeAssurance.resx">
+      <DependentUpon>ListeAssurance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListeCategorie.resx">
+      <DependentUpon>ListeCategorie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListeEntretien.resx">
+      <DependentUpon>ListeEntretien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListeService.resx">
+      <DependentUpon>ListeService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListeUT.resx">
+      <DependentUpon>ListeUT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListeVehicule.resx">
+      <DependentUpon>ListeVehicule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListeVignette.resx">
+      <DependentUpon>ListeVignette.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListeVisiteTechnique.resx">
+      <DependentUpon>ListeVisiteTechnique.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListReparation.resx">
+      <DependentUpon>ListReparation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MotDePasseOublie.resx">
+      <DependentUpon>MotDePasseOublie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registre.resx">
+      <DependentUpon>Registre.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Resources\4.png" />
+    <None Include="Resources\11.png" />
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="WindowsFormsApp1_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

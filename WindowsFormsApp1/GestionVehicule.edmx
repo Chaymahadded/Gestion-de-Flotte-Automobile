@@ -1,0 +1,370 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="GestionVehiculeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Assurance">
+          <Key>
+            <PropertyRef Name="IdAssurance" />
+          </Key>
+          <Property Name="IdAssurance" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DateFin" Type="date" />
+          <Property Name="Num_Vehicule" Type="int" />
+        </EntityType>
+        <EntityType Name="Categorie">
+          <Key>
+            <PropertyRef Name="IdCategorie" />
+          </Key>
+          <Property Name="IdCategorie" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NumCategorie" Type="varchar" MaxLength="255" />
+          <Property Name="NomCategorie" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Entretien">
+          <Key>
+            <PropertyRef Name="IdEntretien" />
+          </Key>
+          <Property Name="IdEntretien" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TypeEntretien" Type="varchar" MaxLength="255" />
+          <Property Name="Kilometrage" Type="int" />
+          <Property Name="Num_Vehicule" Type="int" />
+        </EntityType>
+        <EntityType Name="Reparation">
+          <Key>
+            <PropertyRef Name="IdReparation" />
+          </Key>
+          <Property Name="IdReparation" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DateReparation" Type="date" />
+          <Property Name="Designation" Type="varchar" MaxLength="255" />
+          <Property Name="Quantite" Type="varchar" MaxLength="255" />
+          <Property Name="Prix" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="MontantTotale" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Num_Vehicule" Type="int" />
+        </EntityType>
+        <EntityType Name="Service">
+          <Key>
+            <PropertyRef Name="IdService" />
+          </Key>
+          <Property Name="IdService" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NumService" Type="varchar" MaxLength="255" />
+          <Property Name="NomService" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="IdUser" />
+          </Key>
+          <Property Name="IdUser" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="varchar" MaxLength="255" />
+          <Property Name="CleRecuperation" Type="int" />
+          <Property Name="Password" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="UT">
+          <Key>
+            <PropertyRef Name="IdUT" />
+          </Key>
+          <Property Name="IdUT" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NumUT" Type="varchar" MaxLength="255" />
+          <Property Name="NomUT" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Vehicule">
+          <Key>
+            <PropertyRef Name="NumVehicule" />
+          </Key>
+          <Property Name="NumVehicule" Type="int" Nullable="false" />
+          <Property Name="Matricule" Type="varchar" MaxLength="255" />
+          <Property Name="Marque" Type="varchar" MaxLength="255" />
+          <Property Name="Puissance" Type="varchar" MaxLength="255" />
+          <Property Name="Energie" Type="varchar" MaxLength="255" />
+          <Property Name="DMC" Type="date" />
+          <Property Name="Num_Chassis" Type="int" />
+          <Property Name="NombrePlaces" Type="int" />
+          <Property Name="AgeMoyen" Type="varchar" MaxLength="255" />
+          <Property Name="Index" Type="int" />
+          <Property Name="IdService" Type="int" />
+          <Property Name="IdCategorie" Type="int" />
+          <Property Name="IdUT" Type="int" />
+        </EntityType>
+        <EntityType Name="Vignette">
+          <Key>
+            <PropertyRef Name="Id_Vignette" />
+          </Key>
+          <Property Name="Id_Vignette" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DatePV" Type="date" />
+          <Property Name="Num_Vehicule" Type="int" />
+        </EntityType>
+        <EntityType Name="VisiteTechnique">
+          <Key>
+            <PropertyRef Name="IdVisiteTech" />
+          </Key>
+          <Property Name="IdVisiteTech" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DateVisite" Type="date" />
+          <Property Name="DatePV" Type="date" />
+          <Property Name="MontantTotale" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Num_Vehicule" Type="int" />
+        </EntityType>
+        <EntityContainer Name="GestionVehiculeModelStoreContainer">
+          <EntitySet Name="Assurance" EntityType="Self.Assurance" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Categorie" EntityType="Self.Categorie" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Entretien" EntityType="Self.Entretien" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Reparation" EntityType="Self.Reparation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Service" EntityType="Self.Service" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UT" EntityType="Self.UT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vehicule" EntityType="Self.Vehicule" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vignette" EntityType="Self.Vignette" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VisiteTechnique" EntityType="Self.VisiteTechnique" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="GestionVehiculeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Assurance">
+          <Key>
+            <PropertyRef Name="IdAssurance" />
+          </Key>
+          <Property Name="IdAssurance" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DateFin" Type="DateTime" Precision="0" />
+          <Property Name="Num_Vehicule" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Categorie">
+          <Key>
+            <PropertyRef Name="IdCategorie" />
+          </Key>
+          <Property Name="IdCategorie" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NumCategorie" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="NomCategorie" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Entretien">
+          <Key>
+            <PropertyRef Name="IdEntretien" />
+          </Key>
+          <Property Name="IdEntretien" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TypeEntretien" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Kilometrage" Type="Int32" />
+          <Property Name="Num_Vehicule" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Reparation">
+          <Key>
+            <PropertyRef Name="IdReparation" />
+          </Key>
+          <Property Name="IdReparation" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DateReparation" Type="DateTime" Precision="0" />
+          <Property Name="Designation" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Quantite" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Prix" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="MontantTotale" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Num_Vehicule" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Service">
+          <Key>
+            <PropertyRef Name="IdService" />
+          </Key>
+          <Property Name="IdService" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NumService" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="NomService" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="IdUser" />
+          </Key>
+          <Property Name="IdUser" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="CleRecuperation" Type="Int32" />
+          <Property Name="Password" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="UT">
+          <Key>
+            <PropertyRef Name="IdUT" />
+          </Key>
+          <Property Name="IdUT" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NumUT" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="NomUT" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Vehicule">
+          <Key>
+            <PropertyRef Name="NumVehicule" />
+          </Key>
+          <Property Name="NumVehicule" Type="Int32" Nullable="false" />
+          <Property Name="Matricule" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Marque" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Puissance" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Energie" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="DMC" Type="DateTime" Precision="0" />
+          <Property Name="Num_Chassis" Type="Int32" />
+          <Property Name="NombrePlaces" Type="Int32" />
+          <Property Name="AgeMoyen" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Index" Type="Int32" />
+          <Property Name="IdService" Type="Int32" />
+          <Property Name="IdCategorie" Type="Int32" />
+          <Property Name="IdUT" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Vignette">
+          <Key>
+            <PropertyRef Name="Id_Vignette" />
+          </Key>
+          <Property Name="Id_Vignette" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DatePV" Type="DateTime" Precision="0" />
+          <Property Name="Num_Vehicule" Type="Int32" />
+        </EntityType>
+        <EntityType Name="VisiteTechnique">
+          <Key>
+            <PropertyRef Name="IdVisiteTech" />
+          </Key>
+          <Property Name="IdVisiteTech" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DateVisite" Type="DateTime" Precision="0" />
+          <Property Name="DatePV" Type="DateTime" Precision="0" />
+          <Property Name="MontantTotale" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Num_Vehicule" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="BDGestionVehiculeContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Assurances" EntityType="Self.Assurance" />
+          <EntitySet Name="Categories" EntityType="Self.Categorie" />
+          <EntitySet Name="Entretiens" EntityType="Self.Entretien" />
+          <EntitySet Name="Reparations" EntityType="Self.Reparation" />
+          <EntitySet Name="Services" EntityType="Self.Service" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <EntitySet Name="UTs" EntityType="Self.UT" />
+          <EntitySet Name="Vehicules" EntityType="Self.Vehicule" />
+          <EntitySet Name="Vignettes" EntityType="Self.Vignette" />
+          <EntitySet Name="VisiteTechniques" EntityType="Self.VisiteTechnique" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="GestionVehiculeModelStoreContainer" CdmEntityContainer="BDGestionVehiculeContext">
+          <EntitySetMapping Name="Assurances">
+            <EntityTypeMapping TypeName="GestionVehiculeModel.Assurance">
+              <MappingFragment StoreEntitySet="Assurance">
+                <ScalarProperty Name="IdAssurance" ColumnName="IdAssurance" />
+                <ScalarProperty Name="DateFin" ColumnName="DateFin" />
+                <ScalarProperty Name="Num_Vehicule" ColumnName="Num_Vehicule" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="GestionVehiculeModel.Categorie">
+              <MappingFragment StoreEntitySet="Categorie">
+                <ScalarProperty Name="IdCategorie" ColumnName="IdCategorie" />
+                <ScalarProperty Name="NumCategorie" ColumnName="NumCategorie" />
+                <ScalarProperty Name="NomCategorie" ColumnName="NomCategorie" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Entretiens">
+            <EntityTypeMapping TypeName="GestionVehiculeModel.Entretien">
+              <MappingFragment StoreEntitySet="Entretien">
+                <ScalarProperty Name="IdEntretien" ColumnName="IdEntretien" />
+                <ScalarProperty Name="TypeEntretien" ColumnName="TypeEntretien" />
+                <ScalarProperty Name="Kilometrage" ColumnName="Kilometrage" />
+                <ScalarProperty Name="Num_Vehicule" ColumnName="Num_Vehicule" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reparations">
+            <EntityTypeMapping TypeName="GestionVehiculeModel.Reparation">
+              <MappingFragment StoreEntitySet="Reparation">
+                <ScalarProperty Name="IdReparation" ColumnName="IdReparation" />
+                <ScalarProperty Name="DateReparation" ColumnName="DateReparation" />
+                <ScalarProperty Name="Designation" ColumnName="Designation" />
+                <ScalarProperty Name="Quantite" ColumnName="Quantite" />
+                <ScalarProperty Name="Prix" ColumnName="Prix" />
+                <ScalarProperty Name="MontantTotale" ColumnName="MontantTotale" />
+                <ScalarProperty Name="Num_Vehicule" ColumnName="Num_Vehicule" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Services">
+            <EntityTypeMapping TypeName="GestionVehiculeModel.Service">
+              <MappingFragment StoreEntitySet="Service">
+                <ScalarProperty Name="IdService" ColumnName="IdService" />
+                <ScalarProperty Name="NumService" ColumnName="NumService" />
+                <ScalarProperty Name="NomService" ColumnName="NomService" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="GestionVehiculeModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="CleRecuperation" ColumnName="CleRecuperation" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UTs">
+            <EntityTypeMapping TypeName="GestionVehiculeModel.UT">
+              <MappingFragment StoreEntitySet="UT">
+                <ScalarProperty Name="IdUT" ColumnName="IdUT" />
+                <ScalarProperty Name="NumUT" ColumnName="NumUT" />
+                <ScalarProperty Name="NomUT" ColumnName="NomUT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vehicules">
+            <EntityTypeMapping TypeName="GestionVehiculeModel.Vehicule">
+              <MappingFragment StoreEntitySet="Vehicule">
+                <ScalarProperty Name="NumVehicule" ColumnName="NumVehicule" />
+                <ScalarProperty Name="Matricule" ColumnName="Matricule" />
+                <ScalarProperty Name="Marque" ColumnName="Marque" />
+                <ScalarProperty Name="Puissance" ColumnName="Puissance" />
+                <ScalarProperty Name="Energie" ColumnName="Energie" />
+                <ScalarProperty Name="DMC" ColumnName="DMC" />
+                <ScalarProperty Name="Num_Chassis" ColumnName="Num_Chassis" />
+                <ScalarProperty Name="NombrePlaces" ColumnName="NombrePlaces" />
+                <ScalarProperty Name="AgeMoyen" ColumnName="AgeMoyen" />
+                <ScalarProperty Name="Index" ColumnName="Index" />
+                <ScalarProperty Name="IdService" ColumnName="IdService" />
+                <ScalarProperty Name="IdCategorie" ColumnName="IdCategorie" />
+                <ScalarProperty Name="IdUT" ColumnName="IdUT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vignettes">
+            <EntityTypeMapping TypeName="GestionVehiculeModel.Vignette">
+              <MappingFragment StoreEntitySet="Vignette">
+                <ScalarProperty Name="Id_Vignette" ColumnName="Id_Vignette" />
+                <ScalarProperty Name="DatePV" ColumnName="DatePV" />
+                <ScalarProperty Name="Num_Vehicule" ColumnName="Num_Vehicule" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VisiteTechniques">
+            <EntityTypeMapping TypeName="GestionVehiculeModel.VisiteTechnique">
+              <MappingFragment StoreEntitySet="VisiteTechnique">
+                <ScalarProperty Name="IdVisiteTech" ColumnName="IdVisiteTech" />
+                <ScalarProperty Name="DateVisite" ColumnName="DateVisite" />
+                <ScalarProperty Name="DatePV" ColumnName="DatePV" />
+                <ScalarProperty Name="MontantTotale" ColumnName="MontantTotale" />
+                <ScalarProperty Name="Num_Vehicule" ColumnName="Num_Vehicule" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
