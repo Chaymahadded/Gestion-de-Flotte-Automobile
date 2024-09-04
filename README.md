@@ -2,7 +2,7 @@
 
 ## Description
 
-Cette application de bureau permet de gérer efficacement la flotte automobile d'une entreprise. Elle offre des fonctionnalités pour la gestion des véhicules, le suivi des rappels d'entretien, et la génération de rapports annuels.
+Cette application desktop permet de gérer efficacement la flotte automobile d'une entreprise. Elle offre des fonctionnalités pour la gestion des véhicules, le suivi des rappels d'entretien, et la génération de rapports annuels.
 
 ## Fonctionnalités
 
